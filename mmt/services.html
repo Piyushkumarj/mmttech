@@ -25,6 +25,102 @@
         body {
             background-color: var(--primary-blue);
         }
+        .faq-section {
+    padding: 50px;
+    background: #f4f4f4;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.faq-title {
+    font-size: 36px;
+    color: #0c1a53;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 100%; /* Ensure it takes up full width available */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background-color: #e17000;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.faq-question:hover {
+    background-color: #d46000;
+}
+
+.faq-answer {
+    padding: 20px;
+    background-color: #fff;
+    display: none;
+    border-left: 3px solid #e17000;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .faq-title {
+        font-size: 28px;
+    }
+
+    .faq-question {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .faq-answer {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        width: 95%; /* Further adjustment for very small screens */
+    }
+
+    .faq-title {
+        font-size: 24px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
          
         /* Navbar Styles */
         
@@ -595,7 +691,7 @@
         </div>
     </nav>
 
-    <section class="hero-section" data-aos="fade-right">
+    <section class="hero-section aos-init aos-animate" data-aos="fade-right">
         <div class="hero-content">
             <div class="hero-text" data-aos="fade-right">
                 <div class="hero-strategic">Services</div>
@@ -617,8 +713,8 @@
             <div class="subtitle" data-aos="zoom-in">We Help Transform Your Business Functions With:</div>
         </div>
 
-        <div class="services-grid">
-            <a href="#web-development" class="service-card" data-aos="fade-right">
+        <div class="services-grid ">
+            <a href="webDevelopment.html" class="service-card aos-init aos-animate" data-aos="fade-right">
                 <div class="service-icon">
                     <i class="fas fa-code"></i>
                 </div>
@@ -630,7 +726,7 @@
                 </ul>
             </a>
             
-            <a href="#nfc-cards" class="service-card" data-aos="fade-up">
+            <a href="Digital_visiting_card.html" class="service-card aos-init aos-animate" data-aos="fade-up">
                 <div class="service-icon">
                     <i class="fas fa-id-badge"></i>
                 </div>
@@ -643,7 +739,7 @@
                 </ul>
             </a>
             
-            <a href="#digital-marketing" class="service-card" data-aos="fade-left">
+            <a href="digitalMarketing.html" class="service-card aos-init aos-animate" data-aos="fade-left">
                 <div class="service-icon">
                     <i class="fas fa-rocket"></i>
                 </div>
@@ -655,7 +751,7 @@
                 </ul>
             </a>
 
-            <a href="#cataloging" class="service-card" data-aos="fade-right">
+            <a href="cataloging.html" class="service-card aos-init aos-animate" data-aos="fade-right">
                 <div class="service-icon">
                     <i class="fas fa-book"></i>
                 </div>
@@ -667,7 +763,7 @@
                 </ul>
             </a>
 
-            <a href="#google-listing" class="service-card" data-aos="zoom-in">
+            <a href="" class="service-card aos-init aos-animate" data-aos="zoom-in">
                 <div class="service-icon">
                     <i class="fas fa-search-location"></i>
                 </div>
@@ -679,7 +775,7 @@
                 </ul>
             </a>
 
-            <a href="#ecommerce" class="service-card" data-aos="fade-left">
+            <a href="e-commerce.html" class="service-card aos-init aos-animate" data-aos="fade-left">
                 <div class="service-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
@@ -691,7 +787,7 @@
                 </ul>
             </a>
 
-            <a href="#custom-software" class="service-card" data-aos="fade-right">
+            <a href="ERPsoftwares.html" class="service-card aos-init aos-animate" data-aos="fade-right">
                 <div class="service-icon">
                     <i class="fas fa-cogs"></i>
                 </div>
@@ -703,7 +799,7 @@
                 </ul>
             </a>
 
-            <a href="#ai-analytics" class="service-card" data-aos="zoom-in">
+            <a href="#ai-analytics" class="service-card aos-init aos-animate" data-aos="zoom-in">
                 <div class="service-icon">
                     <i class="fas fa-brain"></i>
                 </div>
@@ -715,7 +811,7 @@
                 </ul>
             </a>
 
-            <a href="#cloud-solutions" class="service-card" data-aos="fade-right">
+            <a href="#cloud-solutions" class="service-card aos-init aos-animate" data-aos="fade-right">
                 <div class="service-icon">
                     <i class="fas fa-network-wired"></i>
                 </div>
@@ -727,7 +823,7 @@
                 </ul>
             </a>
 
-            <a href="#data-management" class="service-card" data-aos="fade-right">
+            <a href="#data-management" class="service-card aos-init aos-animate" data-aos="fade-right">
                 <div class="service-icon">
                     <i class="fas fa-database"></i>
                 </div>
@@ -739,7 +835,7 @@
                 </ul>
             </a>
 
-            <a href="#mobile-app" class="service-card" data-aos="fade-down">
+            <a href="applicationDevelopment.html" class="service-card aos-init aos-animate" data-aos="fade-down">
                 <div class="service-icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
@@ -756,7 +852,7 @@
         <div class="curved-line"></div>
     </section>
    
-    <div class="container1">
+    <div class="container1 aos-init aos-animate">
         <div class="header1">
             <h2 class="sub-title" data-aos="fade-up">Industry Expertise</h2>
             <h1 class="main-title" data-aos="fade-up">Sectors We Serve</h1>
@@ -768,27 +864,27 @@
 
 
             <br>
-            <h2 class="title" data-aos="fade-up">A Trusted Partner for Leading Brands</h2>
-            <div class="logo-grid">
-                <div class="logo-item" data-aos="fade-right">
+            <h2 class="title aos-init aos-animate" data-aos="fade-up">A Trusted Partner for Leading Brands</h2>
+            <div class="logo-grid aos-init aos-animate">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-right">
                     <img src="assets/img/1.jpg" alt="Brand 1">
                 </div>
-                <div class="logo-item" data-aos="fade-right">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-right">
                     <img src="assets/img/logo.jpg" alt="Brand 2">
                 </div>
-                <div class="logo-item" data-aos="fade-up">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-up">
                     <img src="assets/img/aSIASTOCK.jpg" alt="Brand 3">
                 </div>
-                <div class="logo-item" data-aos="fade-up">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-up">
                     <img src="assets/img/Shri Shyam.png" alt="Brand 4">
                 </div>
-                <div class="logo-item" data-aos="fade-left">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-left">
                     <img src="assets/img/profile-pic.png" alt="Brand 5">
                 </div>
-                <div class="logo-item" data-aos="fade-left">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-left">
                     <img src="assets/img/S K BROTHERS.png" alt="Brand 6">
                 </div>
-                <div class="logo-item" data-aos="fade-right">
+                <div class="logo-item aos-init aos-animate" data-aos="fade-right">
                     <img src="assets/img/SHARP.png" alt="Brand 7">
                 </div>
                 
@@ -799,7 +895,7 @@
         
 
 
-    <section class="contact-section">
+    <section class="contact-section aos-init aos-animate">
         <div class="contact-text" data-aos="fade-up">
           <h2>Get in <span>touch</span></h2>
           <p>Want to connect with us?<br>
@@ -807,7 +903,7 @@
           We will contact you at the earliest.</p>
         </div>
         
-        <div class="contact-form" data-aos="fade-up">
+        <div class="contact-form aos-init aos-animate" data-aos="fade-up">
             
           <form id="contactForm">
             <div class="form-group">
@@ -828,7 +924,7 @@
       
       
       <!-- Footer -->
-      <footer class="footer" data-aos="fade-right">
+      <footer class="footer aos-init aos-animate" data-aos="fade-right">
         <div class="company-info">
           <div class="logo">MarsMeta Tech</div>
           <p>At Mars Meta Tech, we push the boundaries of innovation, blending technology and creativity to redefine the future. Together, we transform ideas into impactful solutions, empowering businesses and individuals to reach beyond the stars.</p>
