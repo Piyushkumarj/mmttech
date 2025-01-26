@@ -3,397 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelligent Automation</title>
+    <title>Web Development</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
     rel="stylesheet">
     
    
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            box-sizing: border-box;
-        }
-        /* Header */
-        header {
-            background: #000;
-            color: #fff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header nav {
-            display: flex;
-        }
-        header nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 100px 50px;
-            background: #f4f4f4;
-            flex-wrap: wrap;
-        }
-        .hero-content {
-            max-width: 50%;
-        }
-        .hi {
-            color: #e17000;
-            font-size: 72px;
-        }
-        .hero-content p {
-            color: #0c1a53;
-            font-size: 30px;
-            margin: 20px 0;
-        }
-        .btn {
-            padding: 15px 30px;
-            background: #e17000;
-            color: #fff;
-            text-decoration: none;
-            margin-top: 50px;
-            border-radius: 20px;
-        }
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px; 
-        }
-
-        /* Info Section */
-        .info-section {
-            padding: 100px 50px;
-            text-align: center;
-        }
-        .info-section h2 {
-            color: #0c1a53;
-        }
-
-        /* Areas Section */
-        .areas-section {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 50px;
-            margin-top: 50px;
-        }
-        .area-box {
-            width: 22%;
-            margin: 20px 0;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .area-box img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .area-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        .tiles-head {
-            color: #0c1a53;
-            font-size: 30px;
-        }
-        .tiles-desc {
-            color: #333;
-            font-size: 20px;
-        }
-
-        .faq-section {
-    padding: 50px;
-    background: #f4f4f4;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-.faq-title {
-    font-size: 36px;
-    color: #0c1a53;
-    margin-bottom: 30px;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    text-align: left;
-    width: 100%;
-    max-width: 100%; /* Ensure it takes up full width available */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.faq-question {
-    width: 100%;
-    padding: 20px;
-    background-color: #e17000;
-    color: white;
-    border: none;
-    text-align: left;
-    font-size: 22px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    box-sizing: border-box;
-}
-
-.faq-question:hover {
-    background-color: #d46000;
-}
-
-.faq-answer {
-    padding: 20px;
-    background-color: #fff;
-    display: none;
-    border-left: 3px solid #e17000;
-    font-size: 20px;
-    color: #333;
-    margin-top: 10px;
-    box-sizing: border-box;
-}
-
-.faq-answer p {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .faq-section {
-        width: 90%; /* Adjust width for smaller screens */
-    }
-
-    .faq-title {
-        font-size: 28px;
-    }
-
-    .faq-question {
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    .faq-answer {
-        font-size: 16px;
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .faq-section {
-        width: 95%; /* Further adjustment for very small screens */
-    }
-
-    .faq-title {
-        font-size: 24px;
-    }
-
-    .faq-question {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .faq-answer {
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-
-
-        /* Media Queries for Responsiveness */
-        /* Tablet (1024px and smaller) */
-        @media (max-width: 1024px) {
-            header nav {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-content, .hero-image {
-                max-width: 100%;
-                text-align: center;
-            }
-            .hero-image img {
-                width: 80%;
-                margin: 0 auto;
-            }
-            .hi {
-                font-size: 60px; /* Reduced font size for tablet */
-            }
-            .hero-content p {
-                font-size: 24px; /* Reduced paragraph size for tablet */
-            }
-        }
-
-        /* Mobile (768px and smaller) */
-        @media (max-width: 768px) {
-            header nav {
-                display: block;
-                text-align: center;
-                width: 100%;
-            }
-            header nav a {
-                margin: 10px 0;
-                display: block;
-            }
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-content, .hero-image {
-                max-width: 100%;
-            }
-            .hero-image img {
-                width: 100%;
-                height: auto;
-            }
-            .areas-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            .areas-section .area-box {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-            /* Reduce text size further for mobile devices */
-            .hi {
-                font-size: 50px; /* Further reduced size for mobile */
-            }
-            .hero-content p {
-                font-size: 18px; /* Further reduced paragraph size for mobile */
-            }
-        }
-
-        /* Mobile (480px and smaller) */
-        @media (max-width: 480px) {
-            header nav {
-                display: block;
-                text-align: center;
-            }
-            header nav a {
-                margin: 10px 0;
-                display: block;
-            }
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-content h1 {
-                font-size: 40px; /* Further reduced heading size */
-            }
-            .hero-content p {
-                font-size: 16px; /* Further reduced paragraph size for mobile */
-            }
-            .areas-section .area-box {
-                width: 90%;
-            }
-        }
-        .footer {
-  background-color: black;
-  color: white;
-  padding: 3rem 5%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.company-info {
-  max-width: 400px;
-  color: white;
-}
-
-.logo {
-  color: var(--primary);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
- 
-}
-
-.footer h3 {
-  color: white;
- 
-}
-
-.footer a {
-  color: var(--white);
-  text-decoration: none;
-  color: white;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  color: white;
-}
-
-.social-icons a {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-h3{
-    margin-bottom: 0%;
-
-}
-p{
-    margin: 0%;
-    font-size: 14px;
-}
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/servicestyle.css"> 
 </head>
 <body>
     <header>
-        <div class="logo">MarsMetaTech</div>
-        <nav>
-            <a href="services.html">Services</a>
-            <a href="#">Industries</a>
-            <a href="#">Solutions</a>
-            <a href="#">About Us</a>
+        <nav class="navbar">
+          <a href="index.html"  class="nav-branding" style="color: white; text-decoration:none;">
+            MarsMetaTech
+          </a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About Us</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+  
         </nav>
-    </header>
+      </header>
     <section class="hero-section" data-aos="fade-up">
         <div class="hero-content">
             <span class="hi">Website Development</span>
-            <p>significantly enhance your business by creating a strong online presence, improving customer engagement, and driving growth ,</p>
+            <p>significantly enhance your business by creating a strong online presence, improving customer engagement, and driving growth </p>
             <a href="#" class="btn">Book a Consultation</a>
         </div>
         <div class="hero-image">
-            <img src="WebsiteDevelopment.html/first2.avif" style="width: 500px;" alt="Updated Automation Illustration">
+            <img src="WebsiteDevelopment.html/webs.png" alt="Updated Automation Illustration">
         </div>
     </section>
     <section class="info-section" data-aos="fade-right">
         <span class="tiles-head">Why You Need Website <strong>?</strong></span>
         <br>
-        <span class="tiles-desc">It is essential in today's digital era for individuals, businesses, and organizations aiming to thrive in an online-driven world.With a website, you are always available online, making it easier for others to discover and connect with you.</span>
+        <span class="tiles-desc forContent">It is essential in today's digital era for individuals, businesses, and organizations aiming to thrive in an online-driven world.With a website, you are always available online, making it easier for others to discover and connect with you.</span>
     </section>
 
     <section class="areas-section">
         
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img1.avif" alt="Updated Customer Service" loading="lazy">
             <h3>Establishing an Online Presence</h3>
             <p>
@@ -401,29 +68,29 @@ p{
 It serves as a platform to showcase products, services, or personal portfolios.
             </p>
         </div>
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img2.avif" alt="Updated Finance" loading="lazy">
             <h3>Boosting Sales</h3>
             <p>E-Commerce Integration: Develop an online store to sell products or services directly, increasing revenue.</p>
         </div>
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img3.jpg" alt="Updated Human Resources" loading="lazy">
             <h3>Digital Marketing and Lead Generation</h3>
             <p>Search Engine Optimization (SEO):Optimized websites rank higher on search engines, driving organic traffic and attracting potential customers.</p>
         </div>
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img4.jpg" alt="Save time" loading="lazy">
             <h3>Improving Customer Service</h3>
             <p><strong>Chatbots and AI:</strong> Provide instant support to customers through automated systems.
-            <br><strong>Feedback Forms: </strong>Collect valuable insights to improve your products and services.
+             <strong>Feedback Forms: </strong>Collect valuable insights to improve your products and services.
         </p>
         </div>
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img5.jpg" alt="Secure" loading="lazy">
             <h3>Enabling Flexibility</h3>
             <p>Both static and dynamic websites cater to different needs, whether you're a freelancer, small business, or large enterprise..</p>
         </div>
-        <div class="area-box" data-aos="zoom-in">
+        <div class="area-box newfont" data-aos="zoom-in">
             <img src="WebsiteDevelopment.html/img6.jpg" alt="Secure" loading="lazy">
             <h3>Promoting Brand Identity</h3>
             <p>A custom website reinforces your brand through consistent messaging, visuals, and tone.</p>
@@ -516,6 +183,16 @@ It serves as a platform to showcase products, services, or personal portfolios.
                 }
             });
         });
+      const hamburger=document.querySelector(".hamburger");
+      const navMenu=document.querySelector(".nav-menu");
+      hamburger.addEventListener("click",()=>{
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      })
+      document.querySelector(".nav-link").forEach(n=>n.addEventListener("click",()=>{
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }))
     </script>
     
 </body>

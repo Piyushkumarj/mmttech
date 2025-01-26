@@ -9,16 +9,35 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <style>  
+      *{
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight:500px;
+  font-style: normal;
+      }
+  .hi {
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight:80px;
+    font-style: normal;
+  }
+  
+  </style>
 </head>
 <body>
 
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
-  <a class="device-notification--logo" href="#0">
+  <a class="device-notification--logo" href="about.html">
     <img src="assets/img/logo.png" alt="Global">
     <p>MarsMeta Tech</p>
   </a>
-  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+  <p class="device-notification--message">MarsMeta Tech has so much to offer that we must request you orient your device to portrait or find a larger screen. Till then let me take you through the Services we provide.</p>
 </div>
 
 <div class="perspective effect-rotate-left">
@@ -30,7 +49,7 @@
             <img src="assets/img/logo.png" alt="Global">
             <p>MarsMeta Tech</p>
           </a>
-          <button class="header--cta cta">Hire Us</button>
+          <button class="header--cta cta">Contact Us</button>
           <div class="header--nav-toggle">
             <span></span>
           </div>
@@ -41,15 +60,15 @@
             <li><span>Services</span></li>
             <li><span>About</span></li>
             <li><span>Contact</span></li>
-            <li><span>Hire us</span></li>
+            <li><span>Contact us</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>The Complete<br>IT services<br> Company</h1>
-                <button class="cta">Hire Us
+                <h1 class="hi">The Complete<br>IT services<br> Company</h1>
+                <button class="cta">Contact Us
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -168,7 +187,7 @@
             <div class="about">
               <div class="about--banner">
                 <h2>We<br>are just few<br>passionate<br>people</h2>
-                <a href="#0">Know more
+                <a href="./about.html">Know more
                   <span>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                     <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -300,11 +319,11 @@
     </div>
   </div>
   <ul class="outer-nav">
-    <li class="is-active">Home</li>
-    <li><a href="services.html" style="text-decoration: none; color: #ffffff;">Services</a></li>
-    <li>About</li>
+    <li><a href="#" style="text-decoration: none; color: white;">Home</a></li>
+    <li><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
+    <li><a href="about.html" style="color: white; text-decoration: none;">About </a></li>
     <li>Contact</li>
-    <li>Hire us</li>
+    <li>Contact Us</li>
   </ul>
 </div>
 
@@ -312,4 +331,12 @@
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
 </body>
+<script>
+  const screensize=screen.width;
+  setTimeout(function(){
+    if(screensize< 720){
+    
+    window.location.href='services.html';
+  }}, 6000);
+</script>
 </html>
