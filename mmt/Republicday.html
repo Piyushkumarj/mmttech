@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Republic Day Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .flag-colors {
+            background: linear-gradient(to bottom, 
+                #FF9933 30%, 
+                #FFFFFF 20%, 
+                #FFFFFF 40%, 
+                #138808 40%);
+        }
+        .option-button {
+            position: relative;
+        }
+        .checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg flag-colors">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-900 mb-4"> Republic Day Quiz </h1>
+            <p class="text-xl text-gray-700">Test Your Knowledge of Indian Republic Day!</p>
+        </div>
+
+        <div id="quiz-container" class="bg-white p-6 rounded-lg">
+            <div id="question" class="text-2xl font-semibold text-center mb-6"></div>
+            <div id="options" class="grid grid-cols-2 gap-4"></div>
+            <div class="text-center mt-6">
+                <button id="submit-btn" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+                    Submit Answer
+                </button>
+            </div>
+            <div id="result" class="text-center mt-4 text-xl"></div>
+            <div style="text-align: center;">This Quiz is organized by <a href="https://www.marsmetatech.com"><strong style="color: blue;">MarsMeta Tech</strong></a></div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "On which date was the Indian Constitution adopted?",
+                options: ["26 January 1950", "15 August 1947", "2 October 1869", "23 March 1931"],
+                correct: [0]
+            },
+            {
+                question: "Who was the first President of the Constituent Assembly?",
+                options: ["Jawaharlal Nehru", "Dr. Rajendra Prasad", "B.R. Ambedkar", "Sardar Patel"],
+                correct: [1]
+            },
+            {
+                question: "How many original copies of the Constitution were signed?",
+                options: ["2", "4", "8", "12"],
+                correct: [0]
+            },
+            {
+                question: "Who is known as the 'Father of the Indian Constitution'?",
+                options: ["Mahatma Gandhi", "Jawaharlal Nehru", "B.R. Ambedkar", "Sardar Patel"],
+                correct: [2]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionEl = document.getElementById('question');
+        const optionsEl = document.getElementById('options');
+        const submitBtn = document.getElementById('submit-btn');
+        const resultEl = document.getElementById('result');
+
+        function loadQuestion() {
+            const currentQuizData = quizData[currentQuestion];
+            questionEl.innerText = currentQuizData.question;
+
+            optionsEl.innerHTML = '';
+            currentQuizData.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('option-button', 'bg-blue-100', 'p-4', 'rounded', 'hover:bg-blue-200', 'relative');
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('checkbox');
+                
+                button.appendChild(checkbox);
+                button.addEventListener('click', () => {
+                    checkbox.checked = !checkbox.checked;
+                    selectOption(button, checkbox);
+                });
+                
+                optionsEl.appendChild(button);
+            });
+        }
+
+        function selectOption(button, checkbox) {
+            const buttons = optionsEl.querySelectorAll('.option-button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-green-200', 'bg-red-200');
+                btn.querySelector('input').checked = false;
+            });
+            
+            button.classList.add('bg-blue-200');
+            checkbox.checked = true;
+        }
+
+        submitBtn.addEventListener('click', () => {
+            const selectedBoxes = Array.from(optionsEl.querySelectorAll('input:checked'));
+            
+            if (selectedBoxes.length === 0) {
+                alert('Please select an answer!');
+                return;
+            }
+
+            const currentQuizData = quizData[currentQuestion];
+            const selectedIndices = selectedBoxes.map(box => 
+                Array.from(box.parentElement.parentElement.children).indexOf(box.parentElement)
+            );
+
+            const isCorrect = currentQuizData.correct.every(correctIndex => 
+                selectedIndices.includes(correctIndex)
+            ) && selectedIndices.length === currentQuizData.correct.length;
+
+            if (isCorrect) {
+                score++;
+                selectedBoxes.forEach(box => box.parentElement.classList.add('bg-green-200'));
+            } else {
+                selectedBoxes.forEach(box => box.parentElement.classList.add('bg-red-200'));
+                currentQuizData.correct.forEach(correctIndex => {
+                    optionsEl.children[correctIndex].classList.add('bg-green-200');
+                });
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < quizData.length) {
+                setTimeout(loadQuestion, 1000);
+            } else {
+                resultEl.innerHTML = `Quiz Complete! Your Score: ${score}/${quizData.length}`;
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50');
+            }
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
